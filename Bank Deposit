@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bank-deposit</title>
+  <script type="text/javascript">
+
+    //1.
+      var user = {
+        username: 'Bijou13',
+        password: 'Lome1234',
+        current_bill: 280,
+        payment_history: [],
+      //2.  
+      messageToUser: function('text'){
+      alert(text);
+    },
+      
+      //3.
+      //A.
+      payBill: function(){
+        if(this.current_bill <= 0) {
+          this.messageToUser('No bill due at this time')
+          return;
+        }
+      //A.
+      var payAmount = prompt(`Your current_bill is ${this.current_bill}. How much would you like to pay?`);
+      //B.
+      if (payAmount == false){
+        this.messageToUser('No amount entered');
+        return;
+      }
+      //C.
+      payAmount = parseInt(payAmount, 10);
+      //D.
+      if(payAmount > this.current_bill){
+        this.messageToUser('incorrect amount entered. Please try again');
+        this.payBill();
+        return;
+      }
+      //E.
+      this.current_bill = this.current_bill - PayAmount;
+      //F.
+      this.payment_history.push(payAmount);
+      //G.
+
+      var receipt = confirm(`Thank you for your payment of ${PayAmount}. Would you like to make another payment?`);
+      if(receipt){
+        this.payBill();
+      }else{
+        this.messageToUser('Thanks for your payment!');
+        
+        }
+     
+      }
+    }
+
+    
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
